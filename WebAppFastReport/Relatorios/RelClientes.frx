@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/17/2024 00:01:54" ReportInfo.Modified="05/17/2024 00:23:19" ReportInfo.CreatorVersion="2024.2.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="dataClientes" ReferenceName="dataClientes" DataType="System.Int32" Enabled="true">
+      <Column Name="Codigo" DataType="System.Int32"/>
+      <Column Name="Nome" DataType="System.String"/>
+      <Column Name="CPF" DataType="System.String"/>
+      <Column Name="DataNascimento" DataType="System.DateTime"/>
+      <Column Name="Sexo" DataType="System.Int32"/>
+      <Column Name="Email" DataType="System.String"/>
+      <BusinessObjectDataSource Name="Telefones" DataType="System.Int32" Enabled="true">
+        <Column Name="Codigo" DataType="System.Int32"/>
+        <Column Name="DDD" DataType="System.String"/>
+        <Column Name="Numero" DataType="System.String"/>
+        <Column Name="Tipo" DataType="System.Int32"/>
+      </BusinessObjectDataSource>
+      <BusinessObjectDataSource Name="Enderecos" DataType="System.Int32" Enabled="true">
+        <Column Name="Codigo" DataType="System.Int32"/>
+        <Column Name="EnderecoCompleto" DataType="System.String"/>
+        <Column Name="Complemento" DataType="System.String"/>
+        <Column Name="Bairro" DataType="System.String"/>
+        <Column Name="Cidade" DataType="System.String"/>
+        <Column Name="Estado" DataType="System.String"/>
+        <Column Name="CEP" DataType="System.String"/>
+      </BusinessObjectDataSource>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="264.6" Top="9.45" Width="170.1" Height="18.9" Text="Lista de Clientes:" Font="Arial, 14pt"/>
+      <TextObject Name="Text2" Left="652.05" Width="94.5" Height="18.9" Text="[Date]" Font="Arial, 14pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Top="9.45" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Blue" Text="Código:&#13;&#10;" HorzAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text4" Left="94.5" Top="9.45" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Blue" Text="Nome:" HorzAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Left="189" Top="9.45" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Blue" Text="CPF:" HorzAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text6" Left="283.5" Top="9.45" Width="132.3" Height="18.9" Border.Lines="All" Fill.Color="Blue" Text="Dt. Nascimento:" HorzAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text7" Left="415.8" Top="9.45" Width="132.3" Height="18.9" Border.Lines="All" Fill.Color="Blue" Text="E-mail" HorzAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text14" Left="548.1" Top="9.45" Width="132.3" Height="18.9" Border.Lines="All" Fill.Color="Blue" Text="Sexo:" HorzAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="dataClientes">
+      <TextObject Name="Text9" Left="94.5" Width="94.5" Height="18.9" GrowToBottom="true" CanBreak="false" Text="[dataClientes.Nome]" Font="Arial, 12pt"/>
+      <TextObject Name="Text10" Left="189" Width="94.5" Height="18.9" Text="[dataClientes.CPF]" Font="Arial, 12pt"/>
+      <TextObject Name="Text11" Left="283.5" Width="132.3" Height="18.9" Text="[dataClientes.DataNascimento]" Format="Date" Format.Format="d" Font="Arial, 12pt"/>
+      <TextObject Name="Text12" Left="415.8" Width="132.3" Height="18.9" GrowToBottom="true" CanBreak="false" Text="[dataClientes.Email]" Font="Arial, 12pt"/>
+      <TextObject Name="Text15" Left="548.1" Width="132.3" Height="18.9" GrowToBottom="true" CanBreak="false" Text="[dataClientes.Sexo]" Font="Arial, 12pt"/>
+      <TextObject Name="Text8" Width="94.5" Height="18.9" CanBreak="false" Text="[dataClientes.Codigo]" Font="Arial, 12pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9">
+      <TextObject Name="Text13" Left="661.5" Width="94.5" Height="18.9" Text="[Page]" Font="Arial, 12pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
