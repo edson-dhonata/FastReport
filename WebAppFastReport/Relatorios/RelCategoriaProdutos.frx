@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/20/2024 22:59:44" ReportInfo.Modified="05/20/2024 23:12:02" ReportInfo.CreatorVersion="2024.2.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqAFHGp6KQj27H4qUwAIR20mOA1OiLCaG+eZfAj+q6jrB0FARn6dEjkzQ+j4oaIOqdhAvJvjnXmtCDjwVJyJUvUxoEALKtn8SFjEvytTJQY0eXVl4wC9rEmjQ3XTQ/yA+GsJQaQDBwehDUVrL+O922blF8klmXeib7HyY/OIN8zYdIp5109Eg/86QGPTJEF4EF1QpOGZPBeykSwdIsUBvfuA79YZofPGsFQUPEo5lLbdY=">
+      <TableDataSource Name="CATEGORIA" DataType="System.Int32" Enabled="true" TableName="CATEGORIA">
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="descricao" DataType="System.String"/>
+        <Column Name="ativo" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="PRODUTO" DataType="System.Int32" Enabled="true" TableName="PRODUTO">
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="id_categoria" DataType="System.Int32"/>
+        <Column Name="descricao" DataType="System.String"/>
+        <Column Name="valor" DataType="System.Decimal"/>
+        <Column Name="qtd" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Relation Name="CATEGORIA_PRODUTO" ParentDataSource="CATEGORIA" ChildDataSource="PRODUTO" ParentColumns="id" ChildColumns="id_categoria" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8" Border.Lines="All" Fill.Color="Blue">
+      <TextObject Name="Text2" Left="198.45" Top="9.45" Width="311.85" Height="18.9" Text="Relatório Categoria x Produtos" Font="Arial, 14pt, style=Bold" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="75.6" Border.Lines="All" Fill.Color="Silver" DataSource="CATEGORIA">
+      <TextObject Name="Text1" Left="283.5" Top="18.9" Width="236.25" Height="18.9" Text="[CATEGORIA.descricao]" Font="Arial, 12pt"/>
+      <DataBand Name="Data2" Top="121.4" Width="718.2" Height="37.8" Border.Lines="All" DataSource="PRODUTO">
+        <TextObject Name="Text3" Left="66.15" Top="9.45" Width="179.55" Height="18.9" Text="[PRODUTO.descricao]" Font="Arial, 12pt"/>
+        <TextObject Name="Text4" Left="548.1" Top="9.45" Width="151.2" Height="18.9" Text="[PRODUTO.valor]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 12pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text5" Left="311.85" Top="9.45" Width="66.15" Height="18.9" Text="[PRODUTO.qtd]" HorzAlign="Right" Font="Arial, 12pt"/>
+        <TextObject Name="Text6" Left="9.45" Top="9.45" Width="56.7" Height="18.9" Text="Prod." Font="Arial, 12pt, style=Bold"/>
+        <TextObject Name="Text7" Left="264.6" Top="9.45" Width="47.25" Height="18.9" Text="Qtd." Font="Arial, 12pt, style=Bold"/>
+        <TextObject Name="Text8" Left="491.4" Top="9.45" Width="47.25" Height="18.9" Text="Vlr." Font="Arial, 12pt, style=Bold"/>
+      </DataBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="163.2" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

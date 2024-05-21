@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FastReport.Data;
+using FastReport.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,7 @@ namespace WebAppFastReport
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            RegisteredObjects.AddConnection(typeof(MsSqlDataConnection));
         }
     }
 }
